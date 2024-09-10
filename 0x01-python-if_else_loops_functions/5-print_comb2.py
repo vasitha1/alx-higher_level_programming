@@ -2,6 +2,6 @@
 
 for num in range (0, 100, 2):
     if num != 98:
-        print(f"{num}", end=', ')
+        print("{}".format(num), end=', ')
     else:
-        print(f"{num}")
+        print("{}".format(num))
