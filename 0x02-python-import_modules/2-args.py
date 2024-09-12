@@ -12,7 +12,11 @@ def main(argv):
         print("{} arguments.".format(length - 1))
 
     elif length == 2:
-        print("{0} argument:\n{1}: {2}".format((length - 1), (length - 1), arguments[0]))
+        print("{0} argument:\n{1}: {2}".format(
+            (length - 1),
+            (length - 1),
+            arguments[0]
+        ))
 
     else:
         print("{} arguments:".format(length - 1))
