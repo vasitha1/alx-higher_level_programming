@@ -14,5 +14,6 @@ def main(argv):
         total += int(arguments[arg_index])
     print("{}".format(total))
 
-if __name__  == "__main__":
- main(sys.argv)
+
+if __name__ == "__main__":
+    main(sys.argv)
