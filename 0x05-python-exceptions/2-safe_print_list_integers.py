@@ -12,7 +12,7 @@ def safe_print_list_integers(my_list=[], x=0):
         except IndexError:
             break
 
-        except Exception:
+        except TypeError, ValueError:
             count += 1
             continue
 
