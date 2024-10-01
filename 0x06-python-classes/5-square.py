@@ -10,12 +10,10 @@ class Square:
 
         self.__size = size
 
-
     @property
     def size(self):
         """Gets the size of square"""
         return self.__size
-
 
     @size.setter
     def size(self, value=0):
@@ -28,11 +26,9 @@ class Square:
 
         self.__size = value
 
-
     """Area method to find area of square"""
     def area(self):
         return self.__size ** 2
-
 
     """Method that prints the area with "#" blocks"""
     def my_print(self):
