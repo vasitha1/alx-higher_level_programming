@@ -53,7 +53,7 @@ class Rectangle(Base):
     @height.setter
     def height(self, value):
         """Method for setting height"""
-        if not isinstance(height, int):
+        if not isinstance(value, int):
             raise TypeError("height must be an integer")
 
         if value <= 0:
@@ -68,7 +68,7 @@ class Rectangle(Base):
     @x.setter
     def x(self, value):
         """Method for setting x"""
-        if not isinstance(x, int):
+        if not isinstance(value, int):
             raise TypeError("x must be an integer")
 
         if value < 0:
@@ -78,12 +78,12 @@ class Rectangle(Base):
     @property
     def y(self):
         """Method to retreive the value of y"""
-        return self.__x
+        return self.__y
 
     @y.setter
     def y(self, value):
         """Method for setting y"""
-        if not isinstance(y, int):
+        if not isinstance(value, int):
             raise TypeError("y must be an integer")
 
         if value < 0:
