@@ -10,10 +10,10 @@ class Rectangle(Base):
 
     def __init__(self, width, height, x=0, y=0, id=None):
         """Method innitialises the Rectangle class"""
-        self.width = width
-        self.height = height
-        self.x = x
-        self.y = y
+        self.__width = width
+        self.__height = height
+        self.__x = x
+        self.__y = y
         super().__init__(id)
 
     @property
@@ -24,7 +24,7 @@ class Rectangle(Base):
     @width.setter
     def width(self, value):
         """Setter method for the width"""
-        if not isinstance(value, (int, float)):
+        if not isinstance(value, int):
             raise TypeError("width must be an integer")
 
         if width <= 0:
@@ -40,7 +40,7 @@ class Rectangle(Base):
     @height.setter
     def height(self, value):
         """Method for setting height"""
-        if not isinstance(height, (int, float)):
+        if not isinstance(height, int):
             raise TypeError("height must be an integer")
 
         if Height <= 0:
@@ -55,7 +55,7 @@ class Rectangle(Base):
     @height.setter
     def x(self, value):
         """Method for setting x"""
-        if not isinstance(x, (int, float)):
+        if not isinstance(x, int):
             raise TypeError("x must be an integer")
 
         if x < 0:
@@ -70,7 +70,7 @@ class Rectangle(Base):
     @height.setter
     def y(self, value):
         """Method for setting y"""
-        if not isinstance(y, (int, float)):
+        if not isinstance(y, int):
             raise TypeError("y must be an integer")
 
         if y < 0:
