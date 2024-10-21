@@ -137,8 +137,8 @@ class Rectangle(Base):
 
     def __str__(self):
         """Method to print the method as a string literal"""
-        return ("[Rectangle] ({0}) {1}/{2} - {3}/{4}".format(self.__id,
-                                                             self.__x,
-                                                             self.__y,
-                                                             self.__width,
-                                                             self.__height))
+        return ("[Rectangle] ({0}) {1}/{2} - {3}/{4}".format(self.id,
+                                                             self.x,
+                                                             self.y,
+                                                             self.width,
+                                                             self_height))
