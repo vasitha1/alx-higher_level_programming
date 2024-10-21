@@ -6,7 +6,10 @@ from models.base import Base
 
 
 class Rectangle(Base):
-     """Initialize a new Rectangle.
+    """Class Rectangle defines a new rectangle class"""
+
+    def __init__(self, width, height, x=0, y=0, id=None):
+        """Initialize a new Rectangle.
 
         Args:
             width (int): The width of the new Rectangle.
@@ -20,9 +23,6 @@ class Rectangle(Base):
             TypeError: If either of x or y is not an int.
             ValueError: If either of x or y < 0.
         """
-
-    def __init__(self, width, height, x=0, y=0, id=None):
-        """Method innitialises the Rectangle class"""
         self.__width = width
         self.__height = height
         self.__x = x
