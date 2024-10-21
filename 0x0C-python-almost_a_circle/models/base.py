@@ -7,6 +7,7 @@ The "Base class" module
 import json
 import os
 
+
 class Base:
     """This is the base class"""
     __nb_objects = 0
@@ -35,7 +36,7 @@ class Base:
 
     def from_json_string(json_string):
         """Method that returns the list representation of a json list"""
-        if json_string == None or json_string == []:
+        if json_string is None or json_string == []:
             return "[]"
         return json.loads(json_string)
 
@@ -45,7 +46,7 @@ class Base:
         dummy.update(**dictionary)
 
         return dummy
-        
+
     def load_from_file(cls):
         """Method returns a list of instances from json file"""
         filename = cls.__name__ + ".json"
@@ -56,4 +57,3 @@ class Base:
 
         list_dicts = cls.from_json_string(json_string)
         return [cls.create(**d) for d in list_dicts]
-        
