@@ -96,10 +96,10 @@ class Rectangle(Base):
 
     def display(self):
         """Method that prints a rectangle with "#" blocks"""
-        for i in range(self.__height):
+        for i in range(self.y):
             print()
         for h in range(self.height):
-            print(" " * self.x + "#" * self._width)
+            print(" " * self.x + "#" * self.width)
 
     def update(self, *args, **kwargs):
         """Method that reassigns attributes with variable number of args"""
