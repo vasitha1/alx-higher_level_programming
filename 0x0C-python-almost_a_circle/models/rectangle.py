@@ -65,7 +65,7 @@ class Rectangle(Base):
         """Method to retreive the value of x"""
         return self.__x
 
-    @height.setter
+    @x.setter
     def x(self, value):
         """Method for setting x"""
         if not isinstance(x, int):
@@ -80,7 +80,7 @@ class Rectangle(Base):
         """Method to retreive the value of y"""
         return self.__x
 
-    @height.setter
+    @y.setter
     def y(self, value):
         """Method for setting y"""
         if not isinstance(y, int):
