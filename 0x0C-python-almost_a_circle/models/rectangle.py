@@ -10,10 +10,10 @@ class Rectangle(Base):
 
     def __init__(self, width, height, x=0, y=0, id=None):
         """Method innitialises the Rectangle class"""
-        self.__width = width
-        self.__height = height
-        self.__x = x
-        self.__y = y
+        self.width = width
+        self.height = height
+        self.x = x
+        self.y = y
         super().__init__(id)
 
     @property
@@ -88,7 +88,6 @@ class Rectangle(Base):
         for h in range(self.height):
             print(" " * self.x + "#" * self._width)
 
-
     def update(self, *args, **kwargs):
         """Method that reassigns attributes with variable number of args"""
         if args and len(args) != 0:
@@ -126,7 +125,7 @@ class Rectangle(Base):
     def __str__(self):
         """Method to print the method as a string literal"""
         return ("[Rectangle] ({0}) {1}/{2} - {3}/{4}".format(self.__id,
-                                                              self.__x,
-                                                              self.__y,
-                                                              self.__width,
-                                                              self.__height))
+                                                             self.__x,
+                                                             self.__y,
+                                                             self.__width,
+                                                             self.__height))
