@@ -2,6 +2,7 @@
 """
 This is the module for the "Rectangle" class
 """
+from models.base import Base
 
 
 class Rectangle(Base):
@@ -13,6 +14,7 @@ class Rectangle(Base):
         self.__height = height
         self.__x = x
         self.__y = y
+        super().__init__(id)
 
     @property
     def width(self):
@@ -121,10 +123,10 @@ class Rectangle(Base):
                 "x": self.x,
                 "y": self.y}
 
-    def __str__(self)
+    def __str__(self):
         """Method to print the method as a string literal"""
-        renturn ("[Rectangle] ({0}) {1}/{2} - {3}/{4}".format(self.__id,
+        return ("[Rectangle] ({0}) {1}/{2} - {3}/{4}".format(self.__id,
                                                               self.__x,
                                                               self.__y,
                                                               self.__width,
-                                                              self.__height)
+                                                              self.__height))
