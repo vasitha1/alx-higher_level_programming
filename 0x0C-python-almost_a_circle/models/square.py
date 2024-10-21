@@ -4,6 +4,7 @@ Square module which inherits from rectangle
 """
 from models.rectangle import Rectangle
 
+
 class Square(Rectangle):
     """Square class defines a square"""
     def __init__(self, size, x=0, y=0, id=None):
@@ -49,5 +50,4 @@ class Square(Rectangle):
     def __str__(self):
         """This method creates the string representation of the object"""
         return ("[square] ({0}) {1}/{2} - {3}".format(self.id, self.x,
-                                                    self.y, self.size))
-
+                                                      self.y, self.size))
