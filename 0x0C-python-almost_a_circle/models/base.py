@@ -20,6 +20,7 @@ class Base:
             Base.__nb_objects += 1
             self.id = Base.__nb_objects
 
+    @staticmethod
     def to_json_string(list_dictionaries):
         """Displays the JSON representation of a list"""
         if list_dictionaries is None or list_dictionaries == []:
@@ -34,6 +35,7 @@ class Base:
         with open(filename, "w") as f:
             f.write(json_string)
 
+    @staticmethod
     def from_json_string(json_string):
         """Method that returns the list representation of a json list"""
         if json_string is None or json_string == []:
