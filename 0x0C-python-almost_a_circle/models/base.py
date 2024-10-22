@@ -60,7 +60,7 @@ class Base:
         """Method returns a list of instances from json file"""
         filename = cls.__name__ + ".json"
         if not os.path.exists(filename):
-            return "[]"
+            return []
         with open(filename, 'r') as f:
             json_string = f.read()
 
