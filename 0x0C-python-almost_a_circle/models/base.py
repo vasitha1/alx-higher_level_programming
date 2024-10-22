@@ -40,8 +40,8 @@ class Base:
     @staticmethod
     def from_json_string(json_string):
         """Method that returns the list representation of a json list"""
-        if json_string is None or json_string == []:
-            return "[]"
+        if json_string is None or json_string == "[]":
+            return []
         return json.loads(json_string)
 
     def create(cls, **dictionary):
