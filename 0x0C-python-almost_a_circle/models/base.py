@@ -52,7 +52,7 @@ class Base:
             else:
                 dummy = cls(1)
             dummy.update(**dictionary)
-        return dummy
+            return dummy
 
     def load_from_file(cls):
         """Method returns a list of instances from json file"""
