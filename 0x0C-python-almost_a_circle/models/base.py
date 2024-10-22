@@ -31,8 +31,8 @@ class Base:
     def save_to_file(cls, list_objs):
         """adding the static method that returns the JSON string"""
         filename = cls.__name__ + ".json"
-        list_dicts =
-        [obj.to_dictionary() for obj in list_objs] if list_objs else []
+        list_dicts = [obj.to_dictionary() for obj in list_objs]\
+            if list_objs else []
         json_string = cls.to_json_string(list_dicts)
         with open(filename, "w") as f:
             f.write(json_string)
