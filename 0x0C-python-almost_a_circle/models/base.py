@@ -44,6 +44,7 @@ class Base:
             return []
         return json.loads(json_string)
 
+    @classmethod
     def create(cls, **dictionary):
         """Method that creates  instance with all attributes already set:"""
         if dictionary and dictionary != {}:
@@ -54,6 +55,7 @@ class Base:
             dummy.update(**dictionary)
             return dummy
 
+    @classmethod
     def load_from_file(cls):
         """Method returns a list of instances from json file"""
         filename = cls.__name__ + ".json"
