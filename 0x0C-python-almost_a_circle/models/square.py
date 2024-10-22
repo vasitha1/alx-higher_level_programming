@@ -49,5 +49,5 @@ class Square(Rectangle):
 
     def __str__(self):
         """This method creates the string representation of the object"""
-        return ("[square] ({0}) {1}/{2} - {3}".format(self.id, self.x,
+        return ("[Square] ({0}) {1}/{2} - {3}".format(self.id, self.x,
                                                       self.y, self.size))
