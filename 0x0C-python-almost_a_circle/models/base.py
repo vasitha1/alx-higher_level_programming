@@ -51,8 +51,7 @@ class Base:
                 dummy = cls(1, 1)
             else:
                 dummy = cls(1)
-        dummy.update(**dictionary)
-
+            dummy.update(**dictionary)
         return dummy
 
     def load_from_file(cls):
