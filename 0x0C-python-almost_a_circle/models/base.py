@@ -6,6 +6,7 @@ The "Base class" module
 
 import json
 import os
+import csv
 
 
 class Base:
@@ -66,3 +67,53 @@ class Base:
 
         list_dicts = cls.from_json_string(json_string)
         return [cls.create(**d) for d in list_dicts]
+
+    @classmethod
+    def save_to_file_csv(cls, list_objs):
+        """Saves data in CSV format into a file"""
+
+        from models.rectangle import Rectangle
+        from models.square import Square
+
+        filename = cls.__name__ + ".csv"
+        with open(filename, "w", newline='') as f:
+            write = csv.writer(f)
+            for item in list_objs:
+                if isinstance(item, Rectangle):
+                    write.writerow(["Rectangle", item.id, item.width,
+                                    item.height, item.x, item.y])
+                elif isinstance(item, Square):
+                    write.writerow(["Square", item.id, item.size, item.x,
+                                    item.y])
+
+    @classmethod
+    def load_from_file_csv(cls):
+        """Transforms CSV file into a list of object instances"""
+
+        from models.rectangle import Rectangle
+        from models.square import Square
+
+        filename = cls.__name__ + ".csv"
+        instance = []
+        if not os.path.exists(filename):
+            return instance
+        else:
+            with open(filename, "r", newline='') as f:
+                read = csv.reader(f)
+                for row in read:
+                    if row[0] == "Rectangle":
+                        instance.append(Rectangle(
+                            id=int(row[1]),
+                            width=int(row[2]),
+                            height=int(row[3]),
+                            x=int(row[4]),
+                            y=int(row[5])
+                        ))
+                    elif row[0] == "Square":
+                        instance.append(Square(
+                            id=int(row[1]),
+                            size=int(row[2]),
+                            x=int(row[3]),
+                            y=int(row[4])
+                        ))
+        return instance
