@@ -10,6 +10,10 @@ for (let i = 2; i < args.length; i++) {
   if (num > largestNum) {
     secondLarge = largestNum;
     largestNum = num;
+  } else {
+    if (num !== largestNum && num > secondLarge) {
+      secondLarge = num;
+    }
   }
 }
 console.log(secondLarge);
