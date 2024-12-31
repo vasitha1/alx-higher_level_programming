@@ -1,10 +1,13 @@
 #!/usr/bin/python3
-
+"""
+This model is meant to print states and their corresponding ids
+"""
 import MySQLdb
 import sys
 
 
 def main():
+    """This is the main function"""
     db = MySQLdb.connect(host="localhost", user=sys.argv[1],
                          passwd=sys.argv[2], db=sys.argv[3], port=3306)
     cursor = db.cursor()
