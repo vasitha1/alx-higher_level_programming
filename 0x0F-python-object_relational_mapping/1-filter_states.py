@@ -15,8 +15,9 @@ def main():
                    LIKE 'N%' ORDER BY id ASC""")
     results = cursor.fetchall()
 
-    for row in results:
-        print(row)
+    if results:
+        for row in results:
+            print(row)
 
     cursor.close()
     db.close()
