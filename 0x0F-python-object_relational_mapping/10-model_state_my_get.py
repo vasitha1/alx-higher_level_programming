@@ -12,6 +12,10 @@ from model_state import Base, State
 
 
 def main():
+    if len(sys.argv) != 5:
+        print("Not found")
+        return
+
     searched_name = sys.argv[4]
     engine = create_engine('mysql+mysqldb://{}:{}@localhost:3306/{}'
                            .format(sys.argv[1], sys.argv[2], sys.argv[3]))
@@ -24,6 +28,8 @@ def main():
         print("Not found")
     else:
         print(instance[0].id)
+
+    session.close()
 
 
 if __name__ == "__main__":
