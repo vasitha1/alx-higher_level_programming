@@ -23,8 +23,8 @@ def main():
     Session = sessionmaker(bind=engine)
     session = Session()
 
-    instance = session.query(State).filter(State.name == (sys.argv[4],))
-    if not instance:
+    instance = session.query(State).filter(State.name == searched_name).first()
+    if instance is None:
         print("Not found")
     else:
         print(instance[0].id)
