@@ -27,7 +27,7 @@ def main():
     if instance is None:
         print("Not found")
     else:
-        print(instance[0].id)
+        print(instance.id)
 
     session.close()
 
