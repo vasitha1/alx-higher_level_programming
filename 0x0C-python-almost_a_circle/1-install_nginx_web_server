@@ -28,7 +28,11 @@ sudo ufw status
 sudo chown -R "$USER":"$USER" /var/www/html
 sudo chmod -R 755 /var/www
 
-# Create an index page with "Hello World!"
-echo "Hello World!" | sudo tee /var/www/html/index.nginx-debian.html > /dev/null
+# Create an index page with "Hello World!" depending on default page
+if test -f /var/www/html/index.nginx-debian.html; then
+    echo "Hello World!" | sudo tee /var/www/html/index.nginx-debian.html
+else
+    echo "Hello World!" | sudo tee /var/www/html/index.html
+fi
 
 sudo service nginx restart
