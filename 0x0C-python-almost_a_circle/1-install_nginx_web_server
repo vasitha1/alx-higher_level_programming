@@ -2,24 +2,33 @@
 # This script is used configure a remote server with Nginx and customising
 # and customising it's default html
 
+#update package
 sudo apt-get update
 
+# install Nginx if it's not already installed
 if ! dpkg-query -W nginx >/dev/null 2>&1; then
     sudo apt-get -y install nginx
 else
     echo "Nginx is already installed."
 fi
 
+# allow Nginx through the firewall
 if ! sudo ufw status | grep -q 'Nginx HTTP'; then 
     sudo ufw allow 'Nginx HTTP'
 fi
-sudo ufw -y enable
+
+#Enable UFW if not already enabled
+if [ "$(sudo ufw status | grep -o 'active' | wc -l)" -eq 0 ]; then
+    sudo ufw -y enable
+fi
 
 sudo ufw status
 
+# set ownership and permissions for the web directory
 sudo chown -R "$USER":"$USER" /var/www/html
 sudo chmod -R 755 /var/www
 
+# Create an index page with "Hello World!"
 echo "Hello World!" | sudo tee /var/www/html/index.nginx-debian.html > /dev/null
 
 sudo service nginx restart
