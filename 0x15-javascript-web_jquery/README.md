@@ -1,0 +1,1 @@
+This project is an intermediary JS project meant to understand JS and J query
